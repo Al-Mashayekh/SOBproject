@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Date and Time</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 18px;
+			text-align: center;
+            
+            
+		}
+		#date-time {
+			margin-top: auto;
+            padding: auto;
+			font-size: 36px;
+            text-align: center;
+			font-weight: bold;
+		}
+        .date{
+			margin-top: auto;
+            padding: auto;
+			font-size: 32px;
+            text-align: center;
+			font-weight: bold;
+		}
+        .form{
+            background-color: rgb(0, 0, 0);
+            color: rgb(220, 175, 26);
+            text-align: center;
+            padding: auto;
+            padding-block: auto;
+            margin-right: 50px;
+            margin-left: 50px;
+            align-content: center;
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            border: 10px;
+            border-style: ridge;
+            border-color: rgb(220, 175, 26); 
+        }
+        
+	</style>
+
+<script>function calculateCaffeine() {
+    var drinkType = document.getElementById("drink-type").value;
+    var grams = document.getElementById("grams").value;
+  
+    
+    var caffeineContent = {
+      "coffee": 0.4, 
+      "Esspreso": 2.12, 
+      "energy-drink": 3.2 
+    };
+  
+    var caffeineAmount = grams * caffeineContent[drinkType];
+    document.getElementById("result").innerHTML = "There is " + caffeineAmount + " of caffeine in " + grams + " grams of " + drinkType + ".";
+  }</script>
+<link rel="stylesheet" href="Stylesheet.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+	<header class="header">
+
+        <a href="Index.html" class="Logo">SOB</a>
+
+        <nav class="navbar">
+
+            <a href="Index.html">Home</a>
+            <a href="Service.html">Service</a>
+            <a href="Reviews.html">Reviews</a>
+            <a href="Contact us.html">contact us</a>
+            <a href="About us.html">About us</a>
+            <a href="Resources Page.html">Resources Page</a>
+            <a href="Form page.html">SOB-Calc</a>
+
+
+        </nav>
+    </header>
+	<h1 class="date">Date and Time:<h1><h1 id="date-time"></h1>
+
+
+  <div class="form">
+    <br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <span  class="error"></span>
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="gen" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="gen" name="gender" value="female" required>
+    <label for="female">Female</label>
+    <input type="radio" id="gen" name="gender" value="other">
+    <label for="other">Other</label>
+    <span id="gender-error" class="error"></span>
+    <br>
+    <select id="drink-type">
+        <option value="coffee">Coffee</option>
+        <option value="Esspreso">Esspreso</option>
+        <option value="energy-drink">Energy Drink</option>
+      </select>
+    <br>
+    <input type="number" id="grams" placeholder="Enter grams">
+    <br>
+    <label for="options">Options:</label>
+    <input type="checkbox" id="vanilla" name="options" value="vanilla" required>
+    <label for="vanilla">Vanilla</label>
+    <input type="checkbox" id="cream" name="options" value="cream" required>
+    <label for="cream">Cream</label>
+    <input type="checkbox" id="sugar" name="options" value="sugar" required>
+    <label for="sugar">Sugar</label>
+    <span id="options-error" class="error"></span>
+    <br>
+    <label>Caffieine amount: <span id="textrep"></span></label>
+    <button onclick="calculateCaffeine()">Calculate Caffeine</button>
+    <div id="report-box" style="padding-top: 2%"  >
+        <p id="result" style="color: rgb(0, 255, 225);"></p>
+        <textarea id="textrep" style="height: 200px; width: 350px;">
+         
+        </textarea>
+        
+    </div><br>
+</div>
+ 
+
+    
+	<script>
+		window.onload = function() {
+			var dateTime = document.getElementById("date-time");
+			var now = new Date();
+			dateTime.innerHTML = now.toLocaleString();
+		}
+
+        
+        
+	</script>
+</body>
+</html>
